@@ -4,7 +4,7 @@
   margin: 0;
   font-family: Montserrat, sans-serif;
   color: #fff;
-  letter-spacing: -.02em;
+  /*letter-spacing: -.02em;*/
 }
 
 html {
@@ -66,6 +66,24 @@ button:hover {
 .wrapper > section {
   width: min(100%, 72rem);
   position: relative;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 25rem);
+  gap: 2rem;
+  padding: 4rem 1rem 2rem 6rem;
+}
+
+.text__head {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.text__p {
+  font-size: .9rem;
+  font-family: NotoSans, sans-serif;
 }
 
 .header {
@@ -141,12 +159,17 @@ button:hover {
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;
-  background: radial-gradient(#605CEA55, #605CEA00 60%);
-  border-radius: 50%;
   position: relative;
   top: -2.5rem;
   right: -2.5rem;
   z-index: -1;
+}
+
+.description__deco:before {
+  content: url("./images/HelloBlur.svg");
+  position: absolute;
+  z-index: -10;
+  width: 5rem;
 }
 
 .description__deco-divider {
@@ -179,11 +202,8 @@ button:hover {
 
 .center__phone-shadow {
   position: absolute;
-  width: 60vw;
-  top: -2vh;
-  right: -10vw;
+  width: 100vw;
   z-index: -1;
-  filter: blur(3rem);
 }
 
 .cookie {
@@ -300,41 +320,21 @@ button:hover {
   right: 35%;
 }
 
-.ourMission__text {
-  width: 40%;
-  height: 40vw;
-  padding: 5rem 2rem 0 2vw;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.ourMission__text > h1 {
-  font-size: 2.5rem;
-}
-
-.ourMission__text > p {
-  font-size: .9rem;
-}
-
 .ourMission__text > h1:before {
   z-index: -1;
-  top: 12.5%;
-  right: 10%;
-  content: '';
   position: absolute;
-  width: 12rem;
-  height: 12rem;
-  background: radial-gradient(#F101BF55, #F101BF00 50%);
+  right: min(8vw, 4rem);
+  top: 0;
+  content: url("./images/OurMissionBlur.svg");
 }
 
 .IDScanner {
   margin-top: 10rem;
-  height: 60rem;
+  height: min(80vw, 60rem);
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 4rem;
+  padding: 0 1rem 4rem 1rem;
 }
 
 .IDScanner__background-image {
@@ -347,8 +347,9 @@ button:hover {
 
 .IDScanner__content {
   display: flex;
-  justify-content: center;
   align-items: flex-end;
+  justify-content: center;
+  width: 100%;
 }
 
 .IDScanner__images {
@@ -358,7 +359,7 @@ button:hover {
 }
 
 .IDScanner__images > img {
-  width: 20vw;
+  width: min(18rem, 20vw);
 }
 
 .IDScanner__background-shadow {
@@ -371,27 +372,100 @@ button:hover {
   background: linear-gradient(#000, #0000, #000);
 }
 
-.IDScanner__text {
+.BI {
+  padding: 5rem 0 5rem 0;
+  height: fit-content;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 40vw;
-  gap: 2rem;
-  padding: 0 .5rem 3rem 4rem;
+  justify-content: center;
 }
 
-.IDScanner__text-header {
-  font-size: 2.5rem;
+.BIText {
+  width: min(100%, 35rem);
+  position: relative;
+  height: 100%;
+}
+
+.BIText:before {
+  content: url("./images/BlurBI.svg");
+  z-index: -1;
+  position: absolute;
+  align-self: flex-end;
+  bottom: -100%;
+}
+
+.graphs {
+  position: relative;
+  height: 35rem;
+  width: 65%;
+}
+
+.graphs > div {
+  position: absolute;
+}
+
+.graph > img {
+  width: max(8rem, min(12vw, 10rem));
+}
+
+.graph-withoutBorder > img {
+  width: max(12rem, min(22vw, 18rem));
+}
+
+.graph {
+  border: #fff solid .05rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: fit-content;
+  background: #000;
+}
+
+.graphs > div:nth-child(1) {
+  left: 0;
+  top: 50%;
+}
+
+.graphs > div:nth-child(2) {
+  left: 15%;
+  top: 30%;
+}
+
+.graphs > div:nth-child(3) {
+  right: 20%;
+  top: 0;
+}
+
+.graphs > div:nth-child(4) {
+  left: 27.5%;
+  top: 42.5%;
+}
+
+.graphs > div:nth-child(5) {
+  right: 10%;
+  top: 35%;
+}
+
+.graphs > div:nth-child(6) {
+  bottom: 10%;
+  left: 20%;
+}
+
+.graphs > div:nth-child(7) {
+  right: 5%;
+  bottom: 0;
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 1vw;
+  }
 }
 
 @media (max-width: 1130px) {
   html {
     font-size: 15px;
   }
-  .center__phone-shadow {
-    width: 70vw;
-    top: 5vh;
-    right: -20vw;
+  .graphs {
+    width: 80vw;
   }
 }
 
@@ -403,9 +477,7 @@ button:hover {
     width: 10vw;
   }
   .center__phone-shadow {
-    width: 150vw;
-    right: -80vw;
-    top: 10vh;
+    width: 200vw;
   }
   .center__left-part {
     width: 66%;
@@ -418,8 +490,105 @@ button:hover {
   }
   .description__deco {
     top: -5rem;
-    left: 0;
+    left: -7.5rem;
     position: absolute;
+  }
+
+  .text {
+    gap: 1rem;
+    padding: 3rem 1rem 2rem 4rem;
+  }
+  .text__head {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .text__p {
+    font-size: .8rem;
+    font-family: NotoSans, sans-serif;
+  }
+
+  .center__title > h1 {
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+  }
+
+  .center__description {
+    font-size: .8rem;
+    line-height: 1rem;
+  }
+
+  .download__header {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .questions {
+    flex-direction: column;
+    padding: 6rem 1rem 4rem 1rem;
+  }
+
+  .questions__block {
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+@media (max-width: 550px) {
+  .IDScanner {
+    height: fit-content;
+    padding: 12rem 0 4rem 0;
+  }
+  .IDScanner__content {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+  }
+  .IDScanner__images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .IDScanner__images > img {
+    width: min(85%, 25rem);
+    height: auto;
+  }
+  .text {
+    padding: 3rem .75rem 2rem .75rem;
+    width: 100%;
+  }
+
+  .ourMission {
+    flex-direction: column-reverse;
+    gap: 4rem;
+    height: fit-content;
+  }
+
+  .ourMission__left-block {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .ourMission__image {
+    position: unset;
+    height: auto;
+    width: min(85%, 25rem);
+    transform: rotate(0deg);
+    right: auto;
+  }
+
+  .ourMission__text {
+    padding: 3rem 1.5rem 2rem .75rem;
+  }
+
+  .ourMission__text > h1:before {
+    z-index: -1;
+    position: absolute;
+    right: min(8vw, 4rem);
+    top: 0;
+    content: url("./images/OurMissionBlur.svg");
   }
 }
 
@@ -445,7 +614,7 @@ button:hover {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 340px) {
   html {
     font-size: 4vw;
   }
