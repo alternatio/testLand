@@ -115,6 +115,10 @@ button:hover {
   gap: .5rem;
 }
 
+.header__login > button > img {
+  width: 1.5rem;
+}
+
 .header__login > button {
   font-family: NotoSans, monospace;
   font-size: .9rem;
@@ -380,9 +384,10 @@ button:hover {
 }
 
 .BIText {
-  width: min(100%, 35rem);
+  width: min(100%, 30rem);
   position: relative;
   height: 100%;
+  padding: 4rem 1rem 2rem 2rem;
 }
 
 .BIText:before {
@@ -396,7 +401,7 @@ button:hover {
 .graphs {
   position: relative;
   height: 35rem;
-  width: 65%;
+  width: 80%;
 }
 
 .graphs > div {
@@ -408,11 +413,11 @@ button:hover {
 }
 
 .graph-withoutBorder > img {
-  width: max(12rem, min(22vw, 18rem));
+  width: max(14rem, min(22vw, 18rem));
 }
 
 .graph {
-  border: #fff solid .05rem;
+  border: #ffffff80 solid .05rem;
   padding: 1.5rem;
   border-radius: 1rem;
   width: fit-content;
@@ -435,7 +440,7 @@ button:hover {
 }
 
 .graphs > div:nth-child(4) {
-  left: 27.5%;
+  left: 25%;
   top: 42.5%;
 }
 
@@ -460,12 +465,25 @@ button:hover {
   }
 }
 
+@media (min-width: 1200px) {
+  .BI__text-head {
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 1130px) {
   html {
     font-size: 15px;
   }
+  .graphs > div:nth-child(4) {
+    left: 30%;
+  }
+}
+
+@media (max-width: 800px) {
   .graphs {
-    width: 80vw;
+    width: 100%;
+    height: 37.5rem;
   }
 }
 
@@ -531,6 +549,62 @@ button:hover {
   .questions__block {
     width: 100%;
     height: fit-content;
+  }
+
+  .BI {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .BIText {
+    padding: 4rem 1rem 2rem 1rem;
+  }
+  .graphs {
+    height: 15rem;
+  }
+  .graph {
+    padding: 1.25rem;
+  }
+  .graph > img {
+    width: max(4rem, min(18vw, 10rem));
+  }
+  .graph-withoutBorder > img {
+    width: max(8rem, min(30vw, 18rem));
+  }
+  .graphs > div:nth-child(1) {
+    display: none;
+  }
+  .graphs > div:nth-child(2) {
+    left: 5%;
+    top: 22.5%;
+  }
+  .graphs > div:nth-child(3) {
+    right: unset;
+    top: unset;
+    bottom: -10%;
+    left: -5%;
+  }
+  .graphs > div:nth-child(4) {
+    left: unset;
+    right: 32.5%;
+    top: 10%;
+  }
+  .graphs > div:nth-child(5) {
+    right: 5%;
+    top: -10%;
+  }
+  .graphs > div:nth-child(6) {
+    bottom: 20%;
+    left: 30%;
+  }
+  .graphs > div:nth-child(7) {
+    right: -15%;
+    bottom: -10%;
+  }
+  .graph:nth-child(3) > img {
+    width: max(5rem, min(27.5vw, 18rem));
+  }
+  .graph-withoutBorder:nth-child(7) > img {
+    width: max(14rem, min(60vw, 18rem));
   }
 }
 
