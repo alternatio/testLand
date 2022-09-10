@@ -4,7 +4,7 @@
   margin: 0;
   font-family: Montserrat, sans-serif;
   color: #fff;
-  /*letter-spacing: -.02em;*/
+  letter-spacing: -.02em;
 }
 
 html {
@@ -41,6 +41,20 @@ button:hover {
   opacity: .5;
 }
 
+textarea {
+  resize: none;
+  height: 7.5rem;
+}
+
+textarea::selection, input::selection {
+  background: #000;
+  color: #fff;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0;
+}
+
 ::selection {
   background: #fff;
   color: #000;
@@ -64,7 +78,7 @@ button:hover {
 }
 
 .wrapper > section {
-  width: min(100%, 72rem);
+  width: min(100%, 96rem);
   position: relative;
 }
 
@@ -93,6 +107,7 @@ button:hover {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 
 .header__logo {
@@ -125,7 +140,7 @@ button:hover {
 }
 
 .hello {
-  height: min(100vh, 50rem);
+  height: min(100vh, 35rem);
   padding: 0 max(1rem, 4vw);
   display: flex;
   flex-direction: column;
@@ -195,13 +210,12 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40vw;
   position: relative;
 }
 
 .center__phone-image {
-  width: max(55%, 15rem);
-  filter: drop-shadow(0 0 3rem #fff4);
+  width: max(100%, 15rem);
+  filter: drop-shadow(0 0 3rem #fff3);
 }
 
 .center__phone-shadow {
@@ -215,18 +229,21 @@ button:hover {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: fit-content;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5vw;
   background: #212834;
-  z-index: 1;
+  z-index: 10;
   font-size: .7rem;
   transition: .15s ease-in-out;
+}
 
+.cookiePressed {
   opacity: 0;
   pointer-events: none;
+  bottom: -6rem;
 }
 
 .cookie__button {
@@ -317,7 +334,7 @@ button:hover {
 }
 
 .ourMission__image {
-  height: min(70vw, 50rem);
+  height: min(80vw, 70rem);
   filter: drop-shadow(0 0 3rem #fff3);
   transform: rotate(90deg);
   position: absolute;
@@ -387,7 +404,7 @@ button:hover {
   width: min(100%, 30rem);
   position: relative;
   height: 100%;
-  padding: 4rem 1rem 2rem 2rem;
+  padding: 4rem 1rem 2rem 3rem;
 }
 
 .BIText:before {
@@ -459,6 +476,438 @@ button:hover {
   bottom: 0;
 }
 
+.QRCode {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding-top: 20vw;
+}
+
+.QRCode__left-part {
+  padding: 0 2rem 2rem 10vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.QRCode__left-part__text {
+  padding: 0;
+  width: 80%;
+}
+
+.QRCode__left-part__links {
+  width: fit-content;
+}
+
+.QRCode__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  z-index: -1;
+  justify-content: center;
+}
+
+.nightLife {
+  position: absolute;
+  z-index: 1;
+  right: 5%;
+  top: 5%;
+  width: max(10vw, 5rem);
+}
+
+.QRCode__background:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000, #0000, #000);
+}
+
+.QRCode__background > img:not(.nightLife) {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  width: min(50vw, 40rem);
+}
+
+.QRCode__background > img:nth-child(1) {
+  width: min(60vw, 45rem);
+}
+
+.QRPhone {
+  width: 90%;
+}
+
+.QRPhone1 {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+
+.QRPhone2 {
+  grid-column: 3/4;
+  grid-row: 2/4;
+}
+
+.generateQR {
+  height: fit-content;
+  margin-top: 7.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.generateQR__center {
+  height: max(50vw, 30rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.generateQR__marquees {
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  z-index: -2;
+}
+
+.marquee > span {
+  font-size: max(12vw, 7rem);
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #372B4388;
+  font-weight: 700;
+  font-family: NotoSans, sans-serif;
+}
+
+.marqueeOne {
+  animation: marquee1 5s ease-in-out infinite;
+}
+
+.marqueeTwo {
+  animation: marquee2 5s ease-in-out infinite;
+}
+
+.generateQR__phone {
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.generateQR__phone > img:nth-child(1) {
+  height: 100%;
+}
+
+.generateQR__phone:after {
+  content: url("./images/arrow.svg");
+  position: absolute;
+  right: -40%;
+}
+.generateQR__phone:before {
+  content: 'Scan QR-code';
+  position: absolute;
+  right: -75%;
+  top: 57.5%;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.generateQR__phone > img:nth-child(2) {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+}
+
+.generateQR__text {
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 3rem 0 3rem;
+}
+
+.generateQR__text > .text__head {
+  width: 20rem;
+}
+
+.generateQR__text > .text__p {
+  width: 15rem;
+}
+
+@keyframes marquee1 {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(-20%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+.happierGuests__text {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 7rem 3rem 2rem 2rem;
+}
+
+.happierGuests__text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.happierGuests__center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.happierGuests__center > div {
+  position: absolute;
+  z-index: 1;
+  padding: 1rem;
+  border-radius: .5rem;
+  border: #fff8 solid .05rem;
+  background: #000;
+  max-width: 13rem;
+  font-weight: 500;
+}
+
+.happierGuests__center > img {
+  width: max(60%, 25rem);
+}
+
+.happierGuests__center > div:nth-child(2) {
+  top: 20%;
+  right: 30vw;
+}
+
+.happierGuests__center > div:nth-child(3) {
+  top: 35%;
+  left: 20vw;
+}
+
+.happierGuests__center > div:nth-child(4) {
+  bottom: 20%;
+  left: 30vw;
+}
+
+.happierGuests__center > div:nth-child(5) {
+  bottom: 25%;
+  right: 20vw;
+}
+
+.happierGuests__shadow {
+  position: absolute;
+  top: 0;
+  right: -50%;
+  height: 100%;
+}
+
+.happierGuests__shadow > img {
+  height: 90%;
+}
+
+.notab {
+  height: 45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notab__phone {
+  width: 70%;
+}
+
+.notab__background {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  position: absolute;
+}
+
+.notab__background > img {
+  z-index: -2;
+}
+
+.notab__background:before {
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#000, #0000, #000);
+  position: absolute;
+}
+
+.feedback__text {
+  width: 100%;
+  align-items: center;
+  padding: 3rem;
+  position: relative;
+}
+
+.feedback__text > img {
+  position: absolute;
+  z-index: -1;
+  top: -50%;
+  right: 50%;
+  height: 30rem;
+}
+
+.feedback__text > * {
+  width: min(100%, 30rem);
+  text-align: center;
+}
+
+.feedback__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+
+.feedback__form > img {
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  z-index: -1;
+  height: 25rem;
+}
+
+.form__inputs {
+  display: flex;
+  flex-direction: column;
+  width: min(90%, 30rem);
+  gap: 1rem;
+}
+
+.inputs__cities {
+  display: flex;
+  gap: 1rem;
+}
+
+.inputs__cities > .label {
+  width: 100%;
+}
+
+.inputs__cities > .label > input {
+  width: 100%;
+}
+
+input, textarea {
+  color: #000;
+}
+
+input.invalid:invalid, textarea.invalid:invalid {
+  border: #f00 solid .1rem;
+}
+
+.label > * {
+  padding: 1rem;
+  background: #fff;
+  outline: none;
+  border: #5C5C5C solid .05rem;
+  border-radius: .5rem;
+  width: 100%;
+}
+
+.feedback__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 8rem;
+  border: #fff solid .05rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.footer-links {
+  padding: 4.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.footer-links > .download__title {
+  font-size: 1.2rem;
+}
+
+.footer {
+  width: min(100%, 96rem);
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.footer__left-part {
+  position: relative;
+}
+
+.footer__blur {
+  position: absolute;
+  right: 30%;
+  bottom: -3rem;
+  height: 20rem;
+  z-index: -1;
+}
+
+.footer a {
+  transition: .15s ease-in-out;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  opacity: .5;
+}
+
+.footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer__head {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.copyright {
+  font-weight: 500;
+}
+
 @media (min-width: 2000px) {
   html {
     font-size: 1vw;
@@ -485,14 +934,89 @@ button:hover {
     width: 100%;
     height: 37.5rem;
   }
+
+  .QRCode__left-part {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  .QRCode {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    gap: 2rem;
+    padding-top: 20rem;
+    margin-top: 5rem;
+  }
+  .QRPhone {
+    width: min(20rem, 80%);
+  }
+  .QRPhone1 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .QRPhone2 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .QRCode__background > img:not(.nightLife) {
+    object-fit: cover;
+    aspect-ratio: unset;
+    width: 100%;
+  }
+  .QRCode__background > img:nth-child(2) {
+    position: absolute;
+    top: 40rem;
+  }
+
+  .generateQR {
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
+
+  .generateQR__text {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .generateQR__text > .text__head {
+    width: auto;
+  }
+
+  .generateQR__text > .text__p {
+    width: auto;
+  }
+
+  .generateQR__phone > img:nth-child(2) {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+  }
+
+  .happierGuests__center > div:nth-child(2) {
+    top: 20%;
+    right: 20vw;
+  }
+  .happierGuests__center > div:nth-child(3) {
+    top: 35%;
+    left: 10vw;
+  }
+  .happierGuests__center > div:nth-child(4) {
+    bottom: 20%;
+    left: 21vw;
+  }
+  .happierGuests__center > div:nth-child(5) {
+    bottom: 25%;
+    right: 15vw;
+  }
 }
 
 @media (max-width: 700px) {
   .center__phone-image {
-    width: 40vw;
+    height: max(100%, 30rem);
+    width: 60vw;
   }
   .center__phone {
-    width: 10vw;
+    width: 5vw;
   }
   .center__phone-shadow {
     width: 200vw;
@@ -517,12 +1041,12 @@ button:hover {
     padding: 3rem 1rem 2rem 4rem;
   }
   .text__head {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
   }
 
   .text__p {
-    font-size: .8rem;
+    font-size: 1.1rem;
     font-family: NotoSans, sans-serif;
   }
 
@@ -539,6 +1063,13 @@ button:hover {
   .download__header {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .download__links {
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
   }
 
   .questions {
@@ -606,6 +1137,52 @@ button:hover {
   .graph-withoutBorder:nth-child(7) > img {
     width: max(14rem, min(60vw, 18rem));
   }
+
+  .QRCode__left-part {
+    padding: 0;
+  }
+
+  .IDScanner {
+    margin-top: 5vw;
+  }
+
+  .generateQR__center {
+    margin: 0 0 10rem 0;
+  }
+
+  .generateQR__phone:after {
+    bottom: -10%;
+    right: -25%;
+    transform: rotate(45deg);
+  }
+  .generateQR__phone:before {
+    right: -20%;
+    top: unset;
+    bottom: -19%;
+  }
+
+  .happierGuests__text {
+    align-items: flex-start;
+  }
+
+  .happierGuests__text > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .notab {
+    display: none;
+  }
+  .feedback__text {
+    width: 100%;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .footer-links > .download__links {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 550px) {
@@ -623,13 +1200,14 @@ button:hover {
   .IDScanner__images {
     flex-direction: column;
     align-items: center;
+    gap: 3rem;
   }
   .IDScanner__images > img {
     width: min(85%, 25rem);
     height: auto;
   }
   .text {
-    padding: 3rem .75rem 2rem .75rem;
+    padding: 3rem 1.5rem 2rem 1.5rem;
     width: 100%;
   }
 
@@ -654,7 +1232,7 @@ button:hover {
   }
 
   .ourMission__text {
-    padding: 3rem 1.5rem 2rem .75rem;
+    padding: 3rem 1.5rem 2rem 1.5rem;
   }
 
   .ourMission__text > h1:before {
@@ -664,6 +1242,54 @@ button:hover {
     top: 0;
     content: url("./images/OurMissionBlur.svg");
   }
+  .QRCode__left-part__links {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .happierGuests__center {
+    padding: 8rem 0;
+  }
+
+  .happierGuests__center > div {
+    font-size: 1rem;
+  }
+
+  .happierGuests__center > div:nth-child(2) {
+    top: 17.5%;
+    right: 10vw;
+  }
+
+  .happierGuests__center > div:nth-child(3) {
+    top: 5%;
+    left: 10vw;
+  }
+
+  .happierGuests__center > div:nth-child(4) {
+    bottom: 25%;
+    left: 15vw;
+  }
+
+  .happierGuests__center > div:nth-child(5) {
+    bottom: 15%;
+    right: 10vw;
+    width: 10rem;
+  }
+
+  .inputs__cities {
+    flex-direction: column;
+  }
+
+  .footer {
+    align-items: center;
+    padding: 3rem;
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+  .footer__left-part {
+    align-items: center;
+  }
 }
 
 @media (max-width: 450px) {
@@ -671,8 +1297,11 @@ button:hover {
     width: 100%;
     justify-content: space-between;
   }
+  .header__login > button > img {
+    display: none;
+  }
   html {
-    font-size: 14px;
+    /*font-size: 14px;*/
   }
   .center__left-part {
     z-index: 2;
@@ -691,5 +1320,10 @@ button:hover {
 @media (max-width: 340px) {
   html {
     font-size: 4vw;
+  }
+  .generateQR__phone:after {
+    bottom: -10%;
+    right: -30%;
+    transform: rotate(45deg) scale(.6);
   }
 }

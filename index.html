@@ -8,6 +8,7 @@
   <title>Test Landing</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./fonts/fonts.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <section class="wrapper">
@@ -15,11 +16,10 @@
       <div class="cookie__text">
         We use cookie to improve your experience on our site. By using our site you consent cookies.
       </div>
-      <button class="cookie__button">
+      <button onclick="cookieButtonPressed()" class="cookie__button">
         ok
       </button>
     </div>
-
     <section class="hello">
       <header class="header">
         <div class="header__logo">
@@ -160,7 +160,9 @@
     </section>
     <section class="QRCode">
       <div class="QRCode__background">
-
+        <img src="./images/backgroundQR1.png" alt="backgroundQR">
+        <img src="./images/backgroundQR2.png" alt="backgroundQR">
+        <img class="nightLife" src="./images/Nightlife.svg" alt="nightLife">
       </div>
       <div class="QRCode__left-part">
         <div class="text QRCode__left-part__text">
@@ -168,10 +170,10 @@
             QR code
           </h1>
           <p class="text__p">
-            No more conflict situations due to wrong order. The guest selects the positions, and after that an individual QR code of his order  is generated
+            No more conflict situations due to wrong order. The guest selects the positions, and after that an individual QR code of his order is generated
           </p>
         </div>
-        <div class="download__links">
+        <div class="download__links QRCode__left-part__links">
           <a href="#">
             <img draggable="false" src="./images/appStore.svg" alt="appStore">
           </a>
@@ -180,9 +182,153 @@
           </a>
         </div>
       </div>
-
+      <img class="QRPhone QRPhone1" src="./images/QRPhone1-min.png" alt="phone">
+      <img class="QRPhone QRPhone2" src="./images/QRPhone2-min.png" alt="phone">
     </section>
-
+    <section class="generateQR">
+      <div class="generateQR__center">
+        <div class="generateQR__phone">
+          <img src="./images/generatePhone.svg" alt="phone">
+          <img src="./images/generateBackground.svg" alt="back">
+        </div>
+        <div class="generateQR__marquees">
+          <div class="marqueeOne marquee">
+            <span>notab notab notab</span>
+          </div>
+          <div class="marqueeTwo marquee">
+            <span>notab notab notab</span>
+          </div>
+        </div>
+      </div>
+      <div class="text generateQR__text">
+        <h1 class="text__head">
+          Generate your QR-code
+        </h1>
+        <p class="text__p">
+          The guest QR code is scanned
+          by the staff and automatically sent
+        </p>
+      </div>
+    </section>
+    <section class="happierGuests">
+      <div class="text happierGuests__text">
+        <div>
+          <h1 class="text__head">
+            Easier ordering. <br>
+            Happier guests.
+          </h1>
+          <p class="text__p">
+            NoTab makes it simple for patrons to easily
+          </p>
+        </div>
+      </div>
+      <div class="happierGuests__shadow">
+        <img src="./images/happierGuestsShadow.svg" alt="shadow">
+      </div>
+      <div class="happierGuests__center">
+        <img src="./images/mockup.png" alt="mockup">
+        <div>
+          No more lost or
+          forgotten credit cards
+        </div>
+        <div>
+          No more lost or
+          forgotten credit cards
+        </div>
+        <div>
+          Skip the line
+        </div>
+        <div>
+          No more split
+          your tab
+        </div>
+      </div>
+    </section>
+    <section class="notab">
+      <img class="notab__phone" src="./images/notabPhone.png" alt="notabPhone">
+      <div class="notab__background">
+        <img src="./images/notab.svg" alt="notab">
+      </div>
+    </section>
+    <section class="feedback">
+      <div class="text feedback__text">
+        <h1 class="text__head">
+          Get In Touch
+        </h1>
+        <p class="text__p">
+          Have questions about Noble or just want to say hello?
+          Drop us a line and a member of our team will getback to you shortly.
+        </p>
+        <img src="./images/footerBlur1.svg" alt="blur">
+      </div>
+      <form class="feedback__form">
+        <div class="form__inputs">
+          <label class="label">
+            <input class="input" required type="text" placeholder="Name">
+          </label>
+          <label class="label">
+            <input class="input" required type="text" placeholder="Venue Name">
+          </label>
+          <div class="inputs__cities">
+            <label class="label">
+              <input class="input" required type="text" placeholder="Venue City">
+            </label>
+            <label class="label">
+              <input class="input" required type="text" placeholder="State City">
+            </label>
+          </div>
+          <label class="label">
+            <input class="input" required type="email" placeholder="Email">
+          </label>
+          <label class="label">
+            <input class="input" required type="text" placeholder="Subject">
+          </label>
+          <label class="label">
+            <textarea class="textarea" required placeholder="Message"></textarea>
+          </label>
+        </div>
+        <button class="feedback__button" type="submit">
+          Send
+        </button>
+        <img src="./images/footerBlur2.svg" alt="blur">
+      </form>
+    </section>
+    <div class="footer-links">
+      <h1 class="download__title">Download our app</h1>
+      <div class="download__links">
+        <a href="#">
+          <img draggable="false" src="./images/appStore.svg" alt="appStore">
+        </a>
+        <a href="#">
+          <img draggable="false" src="./images/playMarket.svg" alt="playMarket">
+        </a>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__left-part">
+        <h2 class="footer__head">
+          notab
+        </h2>
+        <p>
+          contact us:
+          <a href="mailto:support@notab.com">
+            support@notab.com
+          </a>
+        </p>
+        <p class="copyright">
+          © 2020 - NoTab®
+        </p>
+        <img class="footer__blur" src="./images/footerBlur3.svg" alt="blur">
+      </div>
+      <div class="footer__right-part">
+        <a href="#">
+          Terms to use
+        </a>
+        <a href="#">
+          Privacy policy
+        </a>
+      </div>
+    </footer>
   </section>
 </body>
 </html>
